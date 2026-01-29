@@ -20,7 +20,7 @@ python app.py
 ```
 
 Open http://127.0.0.1:5000 in your browser, paste English text and click "Translate". If translation succeeds an audio player will appear to play the generated Kannada MP3.
-
+https://english-to-kannada-translator-05t2.onrender.com
 Notes:
 - The app uses `deep-translator` for translation and `gTTS` for Kannada TTS. Results depend on those services.
 - Generated MP3 files are stored in `static/audio`. Remove old files periodically if needed.
