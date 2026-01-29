@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English to Kannada Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 English to Kannada Translator</h1>
+            <p>Translate and listen to translations with audio support</p>
+        </header>
+
+        <main>
+            <div class="translator-section">
+                <!-- Input Section -->
+                <div class="input-group">
+                    <div class="language-header">
+                        <h2>English</h2>
+                        <span class="char-count"><span id="charCount">0</span>/500</span>
+                    </div>
+                    <textarea 
+                        id="englishText" 
+                        placeholder="Enter English text here..." 
+                        maxlength="500"
+                        class="text-area"></textarea>
+                    <div class="button-group">
+                        <button id="translateBtn" class="btn btn-primary">Translate</button>
+                        <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                        <button id="speakEnglishBtn" class="btn btn-audio" title="Speak English">
+                            <span class="icon">🔊</span> Speak
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Output Section -->
+                <div class="output-group">
+                    <div class="language-header">
+                        <h2>ಕನ್ನಡ (Kannada)</h2>
+                    </div>
+                    <div id="kannadadText" class="text-output"></div>
+                    <div class="button-group">
+                        <button id="copyBtn" class="btn btn-secondary" disabled>Copy</button>
+                        <button id="speakKannadaBtn" class="btn btn-audio" disabled title="Speak Kannada">
+                            <span class="icon">🔊</span> Speak
+                        </button>
+                        <button id="downloadBtn" class="btn btn-secondary" disabled>Download Audio</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="features">
+                <h3>Features</h3>
+                <ul>
+                    <li>✅ Real-time English to Kannada translation</li>
+                    <li>✅ Audio pronunciation for both languages</li>
+                    <li>✅ Copy translation to clipboard</li>
+                    <li>✅ Download audio files</li>
+                    <li>✅ Character count</li>
+                </ul>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Translating...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error hidden"></div>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="success hidden"></div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 English to Kannada Translator | Powered by Flask & Google Translate</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

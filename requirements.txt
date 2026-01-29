@@ -1,0 +1,5 @@
+Flask==2.3.2
+Werkzeug==2.3.6
+gTTS==2.3.2
+translators==5.9.2
+python-dotenv==1.0.0
